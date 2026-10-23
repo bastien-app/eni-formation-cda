@@ -48,8 +48,8 @@ export class Tache{
     }
 
     changerStatut(nouveauStatut){
-        if(this.statut){
-            this.statut = Tache.Statuts[nouveauStatut];
+        if (Object.values(Tache.Statuts).includes(nouveauStatut)) {
+            this.statut = nouveauStatut;
         }
         else{
             console.log('Erreur, aucun statut associé à cette tâche')

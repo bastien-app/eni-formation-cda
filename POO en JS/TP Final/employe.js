@@ -56,7 +56,7 @@ export class Employe {
         result = this.trierTachesParPriorite(result);
         console.log(`-- ${this.prenom}  gère ses tâches IN PROGRESS --`);
         for(let i = 0; i < result.length; i++){
-            result[i].statut = Tache.Statuts.Done;
+            result[i].changerStatut(Tache.Statuts.Done);
             console.log(`
             ${this.prenom} travaille sur la tâche : ${result[i].titre}
           - tâche terminée
@@ -74,7 +74,7 @@ export class Employe {
         result = this.trierTachesParPriorite(result);
         console.log(`-- ${this.prenom}  gère ses tâches TO DO --`);
         for(let i = 0; i < result.length; i++){
-            result[i].statut = Tache.Statuts.InProgress;
+            result[i].changerStatut(Tache.Statuts.InProgress);
             console.log(`
             ${this.prenom} travaille sur la tâche : ${result[i].titre}
           - tâche arrêtée pour aujourd'hui
